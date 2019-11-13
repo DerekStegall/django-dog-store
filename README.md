@@ -132,7 +132,7 @@ You can run the following line to only test this view:
 
 ### `new_dog_tag`
 
-On `GET`, this view should render the `new_dog_template.html` template.
+On `GET`, this view should render the `new_dog_tag.html` template.
 
 On `POST`, this view should validate the POSTed form data using the
 `NewDogTagForm` form. If the submission is valid, a new `DogTag` should
