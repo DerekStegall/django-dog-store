@@ -41,16 +41,16 @@ def dog_tag_list(request):
 
 
 def purchase_dog_product(request, dog_product_id):
-    specific_id = DogProduct.objects.get(id=dog_product_id)
-    if specific_id.quantity > 0:
-        specific_id.quantity = specific_id.quantity - 1
-        specific_id.save()
-        purchase = specific_id.purchase_set.create()
-        messages.success(request, f"Purchased {specific_id.name}")
+    dog_product = DogProduct.objects.get(id=dog_product_id)
+    if dog_product.quantity > 0:
+        dog_product.quantity = dog_product.quantity - 1
+        dog_product.save()
+        purchase = dog_product.purchase_set.create()
+        messages.success(request, f"Purchased {dog_product.name}")
         return redirect("purchase_detail", purchase.id)
     else:
-        messages.error(request, f"{specific_id.name} is out of stock")
-        return redirect("dog_product_detail", specific_id.id)
+        messages.error(request, f"{dog_product.name} is out of stock")
+        return redirect("dog_product_detail", dog_product.id)
 
 
 def new_dog_tag(request):
