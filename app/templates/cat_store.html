@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    </ul>
+        <ul class="cat-products">
+        {% for product in cat_products %}
+        <li class="card">
+            <div class="card-body cat-product">
+                <h3 class="card-title cat-product__name">{{ product.name }}</h3>
+                <p class="cat-product__price">${{ product.price|floatformat:"2" }}</p>
+                <a href="{% url 'cat_product_detail' product.id %}"
+                class="btn btn-primary cat-product__link">
+                    View {{ product.name }}
+                </a>
+            </div>
+        </li>
+        {% endfor %}
+        </ul>
+{% endblock content %}

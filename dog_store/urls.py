@@ -33,4 +33,20 @@ urlpatterns = [
     path("purchase/<purchase_id>", views.purchase_detail, name="purchase_detail"),
     path("dogtag/new", views.new_dog_tag, name="new_dog_tag"),
     path("dogtag", views.dog_tag_list, name="dog_tag_list"),
+    path("cat_store", views.cat_store, name="cat_store"),
+    path(
+        "cat-product/<cat_product_id>",
+        views.cat_product_detail,
+        name="cat_product_detail",
+    ),
+    path(
+        "cat-product/<cat_product_id>/purchase",
+        views.purchase_cat_product,
+        name="purchase_cat_product",
+    ),
+    path("purchase/<purchase_id>", views.purchase_detail, name="purchase_detail"),
+    path("cattag/new", views.new_cat_tag, name="new_cat_tag"),
+    path("cattag", views.cat_tag_list, name="cat_tag_list"),
 ]
+
+

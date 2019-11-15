@@ -29,3 +29,14 @@
     flex: 1;
     margin-bottom: 2rem;
 }
+
+.cat-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+
+.cat-product {
+    display: flex;
+    flex-direction: column;
+}

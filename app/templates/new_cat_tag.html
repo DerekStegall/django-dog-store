@@ -1,0 +1,20 @@
+{% extends 'cat_products.html' %}
+{% block content %}
+<form action="{% url 'new_cat_tag' %}" method="post" class="col-3">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="owner_name">Owner Name</label>
+        <input type="text" class="form-control" name="owner_name" id="owner_name" required>
+    </div>
+    <div class="form-group">
+        <label for="cat_name">Cat Name</label>
+        <input type="text" class="form-control" name="cat_name" id="cat_name" required>
+    </div>
+    <div class="form-group">
+        <label for="cat_birthday">cat Birthday</label>
+        <input type="date" class="form-control" name="cat_birthday" id="cat_birthday" required>
+    </div>
+    <button class="btn btn-primary">Create Cat Tag</button>
+    {{ form.errors }}
+</form>
+{% endblock content %}

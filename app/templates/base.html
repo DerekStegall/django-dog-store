@@ -22,6 +22,9 @@
         <li class="nav-item {% if request.resolver_match.url_name == 'dog_tag_list' %}active{% endif %}">
             <a href="{% url 'dog_tag_list' %}" class="nav-link">View Dog Tags</a>
         </li>
+        <li class="nav-item {% if request.resolver_match.url_name == 'cat_store' %}active{% endif %}">    
+            <a href="{% url 'cat_store' %}" class="nav-link">Cat Store</a>
+        </li>
     </ul>
 </nav>
 {% if messages %}

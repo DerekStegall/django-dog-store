@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title">{{ cat_product.name }}</h1>
+        <dl>
+            <dt>Product Type</dt>
+            <dd>{{ cat_product.product_type }}</dd>
+            <dt>Cat Size</dt>
+            <dd>{{ cat_product.cat_size }}</dd>
+            <dt>Price</dt>
+            <dd>${{ cat_product.price|floatformat:"2" }}</dd>
+            <dt>Quantity</dt>
+            <dd>{{ cat_product.quantity }}</dd>
+        </dl>
+        <form action="{% url 'purchase_cat_product' cat_product.id %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-primary">Buy {{ cat_product.name }}</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

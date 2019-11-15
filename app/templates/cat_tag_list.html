@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Cat Tags</h1>
+<ul class="cat-tags">
+{% for cat_tag in cat_tags %}
+<li class="cat-tag mt-5">
+    <div class="cat-tag__cat_name">{{ cat_tag.cat_name }} ({{ cat_tag.cat_birthday}})</div>
+    <div class="cat-tag__owner_name">is loved by {{ cat_tag.owner_name }}</div>
+</li>
+{% endfor %}
+</ul>
+{% endblock content %}

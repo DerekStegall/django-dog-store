@@ -20,3 +20,21 @@ class DogTag(models.Model):
     dog_name = models.TextField()
     dog_birthday = models.DateField()
 
+
+class CatProduct(models.Model):
+    name = models.TextField()
+    product_type = models.TextField()
+    cat_size = models.TextField()
+    price = models.FloatField()
+    quantity = models.IntegerField()
+
+
+class PurchaseCatProduct(models.Model):
+    cat_product = models.ForeignKey(CatProduct, on_delete=models.PROTECT)
+    purchased_at = models.DateTimeField(default=timezone.now)
+
+
+class CatTag(models.Model):
+    owner_name = models.TextField()
+    cat_name = models.TextField()
+    cat_birthday = models.DateField()
