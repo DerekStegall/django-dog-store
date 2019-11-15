@@ -132,13 +132,13 @@ You can run the following line to only test this view:
 
 ### `new_dog_tag`
 
-On `GET`, this view should render the `new_dog_template.html` template.
+On `GET`, this view should render the `new_dog_tag.html` template.
 
 On `POST`, this view should validate the POSTed form data using the
 `NewDogTagForm` form. If the submission is valid, a new `DogTag` should
 be created with the POSTed data and the user should be redirected to
 the `dog_tag_list` view. If the submission is not valid,
-`new_dog_template.html` should be rendered and the invalid form should
+`new_dog_tag.html` should be rendered and the invalid form should
 be provided to the context using the key `form`.
 
 You can run the following line to only test this view:
